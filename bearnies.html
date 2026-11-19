@@ -1,0 +1,2051 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#291810">
+<title>BEARNIES | El antojo tiene nombre</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #291810;
+  --dark2: #3b2418;
+  --brown: #593823;
+  --caramel: #bd8959;
+  --gold: #d5ae7e;
+  --cream: #f7f0e6;
+  --beige: #eadbc8;
+  --white: #fffdf9;
+  --text: #493529;
+  --muted: #887669;
+  --line: rgba(91,59,38,.13);
+  --shadow: 0 20px 55px rgba(48,29,17,.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { font-family: inherit; cursor: pointer; }
+
+img { display: block; max-width: 100%; }
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+section { position: relative; }
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+  box-shadow: 0 5px 25px rgba(30,17,9,.15);
+}
+
+.navbar {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 230px;
+}
+
+.logo-frame {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  background: #f5e9d8;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  overflow: hidden;
+}
+
+.logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  font-family: 'Playfair Display',serif;
+  color: var(--brown);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand-copy strong {
+  color: #fff9f0;
+  font-family: 'Playfair Display',serif;
+  letter-spacing: 2px;
+  font-size: 23px;
+  display: block;
+}
+
+.brand-copy small {
+  color: #c7a989;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #e7d9cb;
+  font-size: 12px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-action {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 13px 21px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .3s;
+  white-space: nowrap;
+}
+
+.nav-action:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.menu-button {
+  display: none;
+  border: 1px solid rgba(255,255,255,.2);
+  color: white;
+  background: transparent;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font-size: 23px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background:
+    radial-gradient(ellipse at 80% 45%, rgba(207,166,119,.23), transparent 45%),
+    var(--cream);
+  overflow: hidden;
+  padding: 70px 0 80px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(125,85,52,.12);
+  border-radius: 50%;
+  right: -260px;
+  top: -260px;
+}
+
+.hero::after {
+  content: "BEARNIES";
+  position: absolute;
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(100px,16vw,210px);
+  font-weight: 800;
+  letter-spacing: -10px;
+  color: rgba(93,58,34,.035);
+  bottom: -70px;
+  left: 3%;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy { padding: 25px 0; }
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 15px;
+  border: 1px solid #d8c4ac;
+  border-radius: 30px;
+  color: var(--brown);
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.hero-label span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--caramel);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(52px,6.4vw,81px);
+  line-height: 1.02;
+  color: var(--dark);
+  letter-spacing: -2.5px;
+}
+
+.hero h1 em {
+  display: block;
+  color: var(--caramel);
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 460px;
+  margin: 25px 0 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-radius: 35px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .3s;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--dark);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--caramel);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  border-color: #d2bda5;
+  color: var(--brown);
+}
+
+.btn-secondary:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.hero-bottom {
+  margin-top: 37px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-bottom-line {
+  width: 42px;
+  height: 1px;
+  background: var(--caramel);
+}
+
+.hero-bottom small {
+  color: #927b68;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* HERO SLIDER */
+
+.hero-gallery {
+  position: relative;
+  height: 475px;
+  padding: 15px;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+  border-radius: 180px 180px 24px 24px;
+  overflow: hidden;
+  position: relative;
+  background: #d9c3a9;
+  box-shadow: var(--shadow);
+}
+
+.hero-slides {
+  height: 100%;
+  display: flex;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 5s ease;
+}
+
+.hero-slide.active img { transform: scale(1.07); }
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 45%,rgba(34,19,10,.65));
+}
+
+.hero-slide-caption {
+  position: absolute;
+  bottom: 43px;
+  left: 35px;
+  z-index: 3;
+  color: white;
+}
+
+.hero-slide-caption small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #e8c9a5;
+  font-weight: 800;
+}
+
+.hero-slide-caption h3 {
+  font-family: 'Playfair Display',serif;
+  font-size: 32px;
+  margin-top: 7px;
+}
+
+.hero-controls {
+  position: absolute;
+  z-index: 5;
+  bottom: 32px;
+  right: 28px;
+  display: flex;
+  gap: 9px;
+}
+
+.hero-controls button {
+  border: 1px solid rgba(255,255,255,.6);
+  color: white;
+  background: rgba(30,18,10,.35);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.hero-controls button:hover {
+  background: white;
+  color: var(--dark);
+}
+
+.hero-float {
+  position: absolute;
+  z-index: 5;
+  left: -25px;
+  top: 75px;
+  background: var(--dark);
+  color: white;
+  padding: 17px 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transform: rotate(-5deg);
+}
+
+.hero-float strong {
+  display: block;
+  font-family: 'Playfair Display',serif;
+  font-size: 20px;
+}
+
+.hero-float small {
+  font-size: 9px;
+  color: #d5b998;
+  letter-spacing: 1px;
+}
+
+.hero-index {
+  position: absolute;
+  right: -4px;
+  top: 20px;
+  width: 76px;
+  height: 76px;
+  background: #e7d1b7;
+  color: var(--brown);
+  border: 5px solid var(--cream);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: 'Playfair Display',serif;
+  font-size: 13px;
+  z-index: 5;
+}
+
+/* =========================
+   BRAND STRIP
+========================= */
+
+.brand-strip {
+  background: var(--dark2);
+  padding: 21px 0;
+  color: #f5e7d7;
+}
+
+.strip-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.strip-content span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.strip-star {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-heading.center { text-align: center; }
+
+.eyebrow {
+  color: var(--caramel);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display',serif;
+  color: var(--dark);
+  font-size: clamp(34px,4.5vw,50px);
+  line-height: 1.17;
+}
+
+.section-heading p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-top: 13px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+  background: var(--white);
+}
+
+.products-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 42px;
+}
+
+.products-topline .section-heading {
+  margin-bottom: 0;
+}
+
+.products-topline > p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 260px;
+  line-height: 1.8;
+  padding-bottom: 6px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--cream);
+  border: 1px solid #eadfd1;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: .4s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-9px);
+  box-shadow: var(--shadow);
+}
+
+.product-photo {
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+
+.product-card:hover .product-photo img {
+  transform: scale(1.08);
+}
+
+.product-tag {
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  background: rgba(255,253,249,.92);
+  color: var(--brown);
+  border-radius: 30px;
+  padding: 8px 13px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.product-info {
+  padding: 25px 24px 24px;
+}
+
+.product-number {
+  font-size: 10px;
+  color: var(--caramel);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.product-info h3 {
+  font-family: 'Playfair Display',serif;
+  font-size: 24px;
+  color: var(--dark);
+  margin: 10px 0;
+}
+
+.product-info p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  min-height: 44px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 19px;
+}
+
+.product-price {
+  font-size: 22px;
+  color: var(--brown);
+  font-weight: 800;
+}
+
+.product-price small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.order-btn {
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 17px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.order-btn:hover {
+  background: var(--caramel);
+  transform: translateY(-2px);
+}
+
+.price-note {
+  text-align: center;
+  margin-top: 25px;
+  color: #9a8979;
+  font-size: 10px;
+}
+
+/* =========================
+   BRAND STORY
+========================= */
+
+.story {
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.story-visual {
+  position: relative;
+  min-height: 410px;
+}
+
+.story-photo {
+  position: absolute;
+  inset: 0 30px 25px 0;
+  border-radius: 18px 130px 18px 18px;
+  overflow: hidden;
+  background: #dfc9ae;
+}
+
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: var(--dark);
+  color: white;
+  padding: 25px 29px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.story-decor strong {
+  display: block;
+  font-family: 'Playfair Display',serif;
+  font-size: 29px;
+}
+
+.story-decor small {
+  color: #d5b795;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.story-copy h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(36px,4.5vw,51px);
+  line-height: 1.17;
+  color: var(--dark);
+}
+
+.story-copy h2 em {
+  color: var(--caramel);
+  font-weight: 500;
+}
+
+.story-copy > p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin: 22px 0 30px;
+}
+
+.story-points {
+  display: grid;
+  gap: 17px;
+}
+
+.story-point {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.story-point span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ead8c3;
+  color: var(--brown);
+  flex-shrink: 0;
+}
+
+.story-point strong {
+  font-size: 12px;
+  color: var(--brown);
+}
+
+/* =========================
+   VALUE BANNER
+========================= */
+
+.value-banner {
+  padding: 55px 0;
+  background: var(--dark);
+  color: white;
+  overflow: hidden;
+}
+
+.value-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.value-intro h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: 29px;
+}
+
+.value-intro p {
+  font-size: 11px;
+  color: #c7b3a2;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+.value-item {
+  border-left: 1px solid rgba(255,255,255,.18);
+  padding-left: 22px;
+}
+
+.value-item span {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.value-item strong {
+  display: block;
+  font-size: 12px;
+  margin: 10px 0 5px;
+}
+
+.value-item small {
+  font-size: 10px;
+  color: #c1ad9b;
+  line-height: 1.7;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  padding: 85px 0;
+  background: #eddfcd;
+}
+
+.cta-panel {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(213,174,126,.17), transparent 35%),
+    var(--brown);
+  border-radius: 25px;
+  padding: 66px 35px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-panel::before {
+  content: "✦";
+  position: absolute;
+  font-size: 180px;
+  color: rgba(255,255,255,.06);
+  top: -70px;
+  left: 6%;
+}
+
+.cta-panel::after {
+  content: "✧";
+  position: absolute;
+  font-size: 170px;
+  color: rgba(255,255,255,.06);
+  bottom: -85px;
+  right: 7%;
+}
+
+.cta-panel h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(36px,5vw,54px);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-panel p {
+  color: #d9c5b2;
+  font-size: 13px;
+  margin: 15px 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-panel .btn {
+  background: var(--gold);
+  color: var(--dark);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-panel .btn:hover {
+  background: white;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  padding: 85px 0;
+  background: var(--white);
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.contact-heading h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: 39px;
+  color: var(--dark);
+}
+
+.contact-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 9px;
+}
+
+.contact-panel {
+  max-width: 820px;
+  margin: auto;
+  background: var(--cream);
+  border: 1px solid #ebdfd1;
+  border-radius: 20px;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #e8d8c4;
+  color: var(--brown);
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.contact-info small {
+  display: block;
+  color: #9c8977;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.contact-info strong {
+  color: var(--brown);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.contact-divider {
+  width: 1px;
+  height: 42px;
+  background: var(--line);
+}
+
+.contact-button {
+  background: var(--dark);
+  color: white;
+  border-radius: 30px;
+  padding: 13px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .3s;
+}
+
+.contact-button:hover {
+  background: var(--caramel);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 55px 0 20px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  padding-bottom: 38px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #f5e9d8;
+  display: grid;
+  place-items: center;
+  padding: 7px;
+  overflow: hidden;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-brand h3 {
+  font-family: 'Playfair Display',serif;
+  font-size: 29px;
+  letter-spacing: 2px;
+}
+
+.footer-brand p {
+  color: #c3a88e;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right strong {
+  color: #e4c39f;
+  font-size: 12px;
+}
+
+.footer-right p {
+  color: #bba99a;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding: 24px 0;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: #d3c0af;
+  transition: .3s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 18px;
+  text-align: center;
+  color: #a38e7d;
+  font-size: 10px;
+}
+
+/* FLOAT BUTTON */
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 24px;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #27814d;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  z-index: 90;
+  box-shadow: 0 8px 25px rgba(30,100,50,.3);
+  transition: .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gentleFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px) {
+  .brand { min-width: auto; }
+
+  .nav-links { gap: 17px; }
+
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .hero-gallery { height: 410px; }
+
+  .product-photo { height: 225px; }
+
+  .value-layout {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:720px) {
+  .navbar { min-height: 76px; }
+
+  .menu-button { display: block; }
+
+  .nav-action { display: none; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 76px;
+    width: 100%;
+    background: var(--dark2);
+    padding: 25px;
+    flex-direction: column;
+    gap: 23px;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+
+  .nav-links.active { display: flex; }
+
+  .hero { padding: 45px 0 55px; }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-copy { text-align: center; }
+
+  .hero h1 { font-size: 58px; }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons { justify-content: center; }
+
+  .hero-bottom { justify-content: center; }
+
+  .hero-gallery {
+    height: 420px;
+    max-width: 470px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .hero-float { left: -5px; }
+
+  .products-topline {
+    display: block;
+  }
+
+  .products-topline > p {
+    margin-top: 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .product-photo { height: 210px; }
+
+  .product-info { padding: 18px 15px; }
+
+  .product-info h3 { font-size: 20px; }
+
+  .product-info p { font-size: 11px; }
+
+  .product-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .story-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .story-visual { min-height: 350px; }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+
+  .contact-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .contact-button { text-align: center; }
+
+  .footer-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right { text-align: center; }
+}
+
+@media(max-width:450px) {
+  .brand-copy strong { font-size: 19px; }
+
+  .logo-frame { width: 55px; height: 55px; }
+
+  .hero h1 { font-size: 49px; }
+
+  .hero-gallery { height: 360px; }
+
+  .hero-slide-caption h3 { font-size: 26px; }
+
+  .product-grid { grid-template-columns: 1fr; }
+
+  .product-photo { height: 270px; }
+
+  .product-bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .value-layout { grid-template-columns: 1fr; }
+
+  .value-item {
+    padding: 15px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+  }
+
+  .cta-panel { padding: 55px 20px; }
+
+  .footer-brand { flex-direction: column; }
+
+  .footer-links { gap: 15px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+<nav class="navbar container">
+
+  <a href="#inicio" class="brand">
+
+    <!-- LOGO DEL ENCABEZADO -->
+    <div class="logo-frame">
+      <img src="logo-bearnies.png"
+           alt="Logo oficial Bearnies"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-placeholder" style="display:none">B.</span>
+    </div>
+
+    <div class="brand-copy">
+      <strong>BEARNIES</strong>
+      <small>El antojo tiene nombre</small>
+    </div>
+
+  </a>
+
+  <button class="menu-button" id="menuButton"
+          aria-label="Abrir menú">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#nosotros">Nuestra marca</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <a href="https://wa.me/51966380085"
+     target="_blank" class="nav-action">
+    PEDIR AHORA ↗
+  </a>
+
+</nav>
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+<div class="container hero-layout">
+
+  <div class="hero-copy reveal">
+
+    <div class="hero-label">
+      <span></span>
+      UN MOMENTO, UN ANTOJO, BEARNIES
+    </div>
+
+    <h1>
+      Hay antojos
+      que merecen
+      <em>algo dulce.</em>
+    </h1>
+
+    <p class="hero-description">
+      Bienvenido a Bearnies. Descubre nuestros brownies
+      clásicos, bañados en chocolate y con toppings.
+      Tres formas de disfrutar el chocolate y convertir
+      cualquier momento en algo especial.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#productos" class="btn btn-primary">
+        Descubrir productos ↗
+      </a>
+
+      <a href="https://wa.me/51966380085"
+         target="_blank" class="btn btn-secondary">
+        Hacer un pedido
+      </a>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-bottom-line"></div>
+      <small>CHOCOLATE · SABOR · EXPERIENCIA</small>
+    </div>
+
+  </div>
+
+
+  <!-- CARRUSEL PRINCIPAL -->
+
+  <div class="hero-gallery reveal">
+
+    <div class="hero-slider">
+      <div class="hero-slides" id="heroSlides">
+
+        <div class="hero-slide active">
+          <img src="brownie-clasico.jpg"
+               alt="Brownie clásico"
+               onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=1000&q=85'">
+          <div class="hero-slide-caption">
+            <small>01 / LA ESENCIA</small>
+            <h3>El clásico.</h3>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="brownie-chocolate.jpg"
+               alt="Brownie bañado en chocolate"
+               onerror="this.src='https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=1000&q=85'">
+          <div class="hero-slide-caption">
+            <small>02 / MÁS CHOCOLATE</small>
+            <h3>Una tentación.</h3>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="brownie-toppings.jpg"
+               alt="Brownie con toppings"
+               onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=1000&q=85'">
+          <div class="hero-slide-caption">
+            <small>03 / EL TOQUE ESPECIAL</small>
+            <h3>A tu manera.</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-controls">
+        <button id="heroPrev" aria-label="Anterior">←</button>
+        <button id="heroNext" aria-label="Siguiente">→</button>
+      </div>
+    </div>
+
+    <div class="hero-float">
+      <strong>BEARNIES.</strong>
+      <small>SWEET MOMENTS</small>
+    </div>
+
+    <div class="hero-index">
+      MADE<br>WITH<br>♡
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+
+<!-- BANDA DE MARCA -->
+
+<div class="brand-strip">
+  <div class="container strip-content">
+    <span>EL PLACER DEL CHOCOLATE</span>
+    <span class="strip-star">✦</span>
+    <span>TRES FORMAS DE DISFRUTAR</span>
+    <span class="strip-star">✦</span>
+    <span>EL ANTOJO TIENE NOMBRE</span>
+  </div>
+</div>
+
+
+<!-- =========================
+     PRODUCTOS
+========================= -->
+
+<section class="section products" id="productos">
+
+<div class="container">
+
+  <div class="products-topline">
+
+    <div class="section-heading reveal">
+      <div class="eyebrow">NUESTRO CATÁLOGO</div>
+      <h2>Encuentra tu favorito.</h2>
+      <p>Tres variedades, una misma pasión por el chocolate.</p>
+    </div>
+
+    <p class="reveal">
+      Explora nuestras presentaciones y elige
+      el brownie que mejor acompañe tu antojo.
+    </p>
+
+  </div>
+
+
+  <div class="product-grid">
+
+    <!-- CLÁSICO -->
+
+    <article class="product-card reveal">
+
+      <div class="product-photo">
+
+        <img src="brownie-clasico.jpg"
+             alt="Brownie clásico"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=85'">
+
+        <span class="product-tag">01 · TRADICIONAL</span>
+
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-number">THE ORIGINAL</span>
+
+        <h3>Brownie clásico</h3>
+
+        <p>
+          El sabor tradicional del brownie,
+          con una presentación sencilla
+          para disfrutar cada bocado.
+        </p>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            S/ 2.00
+            <small>Precio referencial · unidad</small>
+          </div>
+
+          <button class="order-btn"
+                  onclick="orderProduct('Brownie clásico')">
+            PEDIR ↗
+          </button>
+
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- BAÑADO -->
+
+    <article class="product-card reveal">
+
+      <div class="product-photo">
+
+        <img src="brownie-chocolate.jpg"
+             alt="Brownie bañado en chocolate"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=800&q=85'">
+
+        <span class="product-tag">02 · CHOCOLATE</span>
+
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-number">CHOCOLATE LOVER</span>
+
+        <h3>Brownie bañado</h3>
+
+        <p>
+          Nuestro brownie con una cobertura
+          de chocolate que añade un toque
+          especial a su presentación.
+        </p>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            S/ 4.00
+            <small>Precio referencial · unidad</small>
+          </div>
+
+          <button class="order-btn"
+                  onclick="orderProduct('Brownie bañado en chocolate')">
+            PEDIR ↗
+          </button>
+
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- TOPPINGS -->
+
+    <article class="product-card reveal">
+
+      <div class="product-photo">
+
+        <img src="brownie-toppings.jfif"
+             alt="Brownie con toppings"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=85'">
+
+        <span class="product-tag">03 · ESPECIAL</span>
+
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-number">EXTRA EXPERIENCE</span>
+
+        <h3>Brownie con toppings</h3>
+
+        <p>
+          Una presentación especial con
+          diferentes toppings y combinaciones
+          para disfrutar algo diferente.
+        </p>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            S/ 6.50
+            <small>Precio referencial · unidad</small>
+          </div>
+
+          <button class="order-btn"
+                  onclick="orderProduct('Brownie con toppings')">
+            PEDIR ↗
+          </button>
+
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+  <p class="price-note">
+    * Precios referenciales sujetos a modificación.
+    Consulta disponibilidad y presentaciones por WhatsApp.
+  </p>
+
+</div>
+</section>
+
+
+<!-- =========================
+     NUESTRA MARCA
+========================= -->
+
+<section class="section story" id="nosotros">
+
+<div class="container story-layout">
+
+  <div class="story-visual reveal">
+
+    <div class="story-photo">
+      <img src="brownie-final.jpg"
+           alt="Presentación de Bearnies"
+           loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=900&q=85'">
+    </div>
+
+    <div class="story-decor">
+      <strong>BEARNIES.</strong>
+      <small>EL ANTOJO TIENE NOMBRE</small>
+    </div>
+
+  </div>
+
+
+  <div class="story-copy reveal">
+
+    <div class="eyebrow">MÁS QUE UN ANTOJO</div>
+
+    <h2>
+      Pequeños momentos,
+      <em>grandes sabores.</em>
+    </h2>
+
+    <p>
+      BEARNIES nace de una idea sencilla:
+      hacer de los brownies una experiencia
+      que valga la pena disfrutar.
+
+      Nuestra propuesta reúne tres presentaciones
+      para diferentes gustos, manteniendo al chocolate
+      como protagonista.
+    </p>
+
+    <div class="story-points">
+
+      <div class="story-point">
+        <span>✦</span>
+        <strong>Variedad para diferentes antojos.</strong>
+      </div>
+
+      <div class="story-point">
+        <span>♡</span>
+        <strong>Presentaciones que destacan.</strong>
+      </div>
+
+      <div class="story-point">
+        <span>✧</span>
+        <strong>Una identidad propia y especial.</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     PROPUESTA DE VALOR
+========================= -->
+
+<section class="value-banner">
+
+<div class="container value-layout">
+
+  <div class="value-intro reveal">
+    <h2>El mundo BEARNIES.</h2>
+    <p>Una propuesta sencilla, dulce y hecha para disfrutar.</p>
+  </div>
+
+  <div class="value-item reveal">
+    <span>✦</span>
+    <strong>Variedad</strong>
+    <small>Tres formas de disfrutar nuestros brownies.</small>
+  </div>
+
+  <div class="value-item reveal">
+    <span>♡</span>
+    <strong>Personalidad</strong>
+    <small>Una marca con estilo propio.</small>
+  </div>
+
+  <div class="value-item reveal">
+    <span>✧</span>
+    <strong>Antojo</strong>
+    <small>El chocolate como protagonista.</small>
+  </div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     LLAMADO A LA ACCIÓN
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+  <div class="cta-panel reveal">
+
+    <div class="eyebrow" style="color:#e2bd96">
+      TU MOMENTO DULCE COMIENZA AQUÍ
+    </div>
+
+    <h2>¿Ya elegiste tu favorito?</h2>
+
+    <p>
+      No te quedes con las ganas.
+      Encuentra tu brownie favorito y haz tu pedido.
+    </p>
+
+    <a href="https://wa.me/51966380085"
+       target="_blank" class="btn">
+      QUIERO MI BEARNIES ↗
+    </a>
+
+  </div>
+
+</div>
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact" id="contacto">
+
+<div class="container">
+
+  <div class="contact-heading reveal">
+
+    <div class="eyebrow">CONECTA CON BEARNIES</div>
+
+    <h2>Estamos a un mensaje.</h2>
+
+    <p>Escríbenos o síguenos para conocer nuestros productos.</p>
+
+  </div>
+
+
+  <div class="contact-panel reveal">
+
+    <a href="https://wa.me/51966380085"
+       target="_blank" class="contact-info">
+
+      <div class="contact-icon">☏</div>
+
+      <div>
+        <small>WHATSAPP · PEDIDOS</small>
+        <strong>+51 966 380 085</strong>
+      </div>
+
+    </a>
+
+    <div class="contact-divider"></div>
+
+    <a href="https://www.instagram.com/bear_nies/"
+       target="_blank" class="contact-info">
+
+      <div class="contact-icon">◎</div>
+
+      <div>
+        <small>INSTAGRAM · SÍGUENOS</small>
+        <strong>@bear_nies</strong>
+      </div>
+
+    </a>
+
+    <a href="https://wa.me/51966380085"
+       target="_blank" class="contact-button">
+      CONTACTAR ↗
+    </a>
+
+  </div>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+
+      <!-- LOGO DEL FOOTER -->
+      <div class="footer-logo">
+
+        <img src="logo-bearnies.png"
+             alt="Logo Bearnies"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+
+        <span class="logo-placeholder" style="display:none">B.</span>
+
+      </div>
+
+      <div>
+        <h3>BEARNIES.</h3>
+        <p>EL ANTOJO TIENE NOMBRE.</p>
+      </div>
+
+    </div>
+
+
+    <div class="footer-right">
+      <strong>Una experiencia para disfrutar.</strong>
+      <p>Brownies · Chocolate · Toppings</p>
+      <p>WhatsApp: +51 966 380 085</p>
+      <p>Instagram: @bear_nies</p>
+    </div>
+
+  </div>
+
+
+  <div class="footer-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nuestra marca</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://www.instagram.com/bear_nies/"
+       target="_blank">Instagram ↗</a>
+  </div>
+
+
+  <div class="copyright">
+    © <span id="year"></span> BEARNIES. Todos los derechos reservados.
+    <br><br>
+    <strong style="color:#d5b18b">
+      Neil Anderson Soto Zanca | 5to A
+    </strong>
+  </div>
+
+</div>
+</footer>
+
+
+<!-- WHATSAPP FLOTANTE -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/51966380085"
+   target="_blank"
+   aria-label="WhatsApp">
+  ☏
+</a>
+
+
+<script>
+
+/* =========================
+   MENU RESPONSIVE
+========================= */
+
+const menuButton = document.getElementById('menuButton');
+const navLinks = document.getElementById('navLinks');
+
+menuButton.addEventListener('click', () => {
+
+  navLinks.classList.toggle('active');
+
+  menuButton.textContent =
+    navLinks.classList.contains('active') ? '×' : '☰';
+
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuButton.textContent = '☰';
+  });
+
+});
+
+
+/* =========================
+   WHATSAPP PEDIDOS
+========================= */
+
+function orderProduct(product) {
+
+  const phone = '51966380085';
+
+  const message =
+    `¡Hola Bearnies! Quisiera realizar un pedido de ${product}. ¿Me podrían brindar información?`;
+
+  const url =
+    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, '_blank');
+
+}
+
+
+/* =========================
+   HERO IMAGE SLIDER
+========================= */
+
+const heroSlides = document.getElementById('heroSlides');
+const heroItems = document.querySelectorAll('.hero-slide');
+
+let heroIndex = 0;
+let heroTimer;
+
+function updateHero() {
+
+  heroSlides.style.transform =
+    `translateX(-${heroIndex * 100}%)`;
+
+  heroItems.forEach((slide, index) => {
+    slide.classList.toggle('active', index === heroIndex);
+  });
+
+}
+
+function nextHero() {
+
+  heroIndex = (heroIndex + 1) % heroItems.length;
+  updateHero();
+
+}
+
+function previousHero() {
+
+  heroIndex =
+    (heroIndex - 1 + heroItems.length) % heroItems.length;
+
+  updateHero();
+
+}
+
+function restartHeroTimer() {
+
+  clearInterval(heroTimer);
+
+  heroTimer = setInterval(nextHero, 4500);
+
+}
+
+document.getElementById('heroNext').addEventListener('click', () => {
+  nextHero();
+  restartHeroTimer();
+});
+
+document.getElementById('heroPrev').addEventListener('click', () => {
+  previousHero();
+  restartHeroTimer();
+});
+
+restartHeroTimer();
+
+
+/* =========================
+   REVEAL ANIMATIONS
+========================= */
+
+const revealObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('visible');
+
+      revealObserver.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(element => {
+  revealObserver.observe(element);
+});
+
+
+/* =========================
+   CURRENT YEAR
+========================= */
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+
+</script>
+
+</body>
+</html>
